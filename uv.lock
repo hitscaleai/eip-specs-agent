@@ -4,8 +4,8 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
-    "ai-hero-course",
     "app",
+    "eip-specs-agent",
 ]
 
 [[package]]
@@ -19,45 +19,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/67/bb/5a5ec893eea5805fb
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/78/eb55fabaab41abc53f52c0918a9a8c0f747807e5306273f51120fd695957/ag_ui_protocol-0.1.10-py3-none-any.whl", hash = "sha256:c81e6981f30aabdf97a7ee312bfd4df0cd38e718d9fc10019c7d438128b93ab5", size = 7889, upload-time = "2025-11-06T15:17:15.325Z" },
 ]
-
-[[package]]
-name = "ai-hero-course"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "groq" },
-    { name = "minsearch" },
-    { name = "numpy" },
-    { name = "openai" },
-    { name = "pandas" },
-    { name = "pydantic-ai" },
-    { name = "python-frontmatter" },
-    { name = "requests" },
-    { name = "sentence-transformers" },
-    { name = "tqdm" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "jupyter" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "groq", specifier = ">=1.0.0" },
-    { name = "minsearch", specifier = ">=0.0.7" },
-    { name = "numpy", specifier = ">=2.4.0" },
-    { name = "openai", specifier = ">=2.14.0" },
-    { name = "pandas", specifier = ">=2.3.3" },
-    { name = "pydantic-ai", specifier = ">=1.39.0" },
-    { name = "python-frontmatter", specifier = ">=1.1.0" },
-    { name = "requests", specifier = ">=2.32.5" },
-    { name = "sentence-transformers", specifier = ">=5.2.0" },
-    { name = "tqdm", specifier = ">=4.67.1" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "jupyter", specifier = ">=1.1.1" }]
 
 [[package]]
 name = "aiohappyeyeballs"
@@ -688,6 +649,47 @@ sdist = { url = "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ff
 wheels = [
     { url = "https://files.pythonhosted.org/packages/02/10/5da547df7a391dcde17f59520a231527b8571e6f46fc8efb02ccb370ab12/docutils-0.22.4-py3-none-any.whl", hash = "sha256:d0013f540772d1420576855455d050a2180186c91c15779301ac2ccb3eeb68de", size = 633196, upload-time = "2025-12-18T19:00:18.077Z" },
 ]
+
+[[package]]
+name = "eip-specs-agent"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "groq" },
+    { name = "minsearch" },
+    { name = "numpy" },
+    { name = "openai" },
+    { name = "pandas" },
+    { name = "pydantic-ai" },
+    { name = "python-frontmatter" },
+    { name = "requests" },
+    { name = "sentence-transformers" },
+    { name = "streamlit" },
+    { name = "tqdm" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "jupyter" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "groq", specifier = ">=1.0.0" },
+    { name = "minsearch", specifier = ">=0.0.7" },
+    { name = "numpy", specifier = ">=2.4.0" },
+    { name = "openai", specifier = ">=2.14.0" },
+    { name = "pandas", specifier = ">=2.3.3" },
+    { name = "pydantic-ai", specifier = ">=1.39.0" },
+    { name = "python-frontmatter", specifier = ">=1.1.0" },
+    { name = "requests", specifier = ">=2.32.5" },
+    { name = "sentence-transformers", specifier = ">=5.2.0" },
+    { name = "streamlit", specifier = ">=1.52.2" },
+    { name = "tqdm", specifier = ">=4.67.1" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "jupyter", specifier = ">=1.1.1" }]
 
 [[package]]
 name = "email-validator"

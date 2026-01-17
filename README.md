@@ -14,6 +14,7 @@ An AI-powered question-answering system for Ethereum Improvement Proposals (EIPs
 ## Table of Contents
 
 - [Features](#features)
+- [Demo](#demo)
 - [Architecture](#architecture)
 - [Quick Start](#quick-start)
 - [Installation](#installation)
@@ -21,6 +22,7 @@ An AI-powered question-answering system for Ethereum Improvement Proposals (EIPs
 - [Usage Examples](#usage-examples)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
+- [Evaluation](#evaluation)
 - [API Reference](#api-reference)
 - [Development](#development)
 
@@ -36,6 +38,40 @@ An AI-powered question-answering system for Ethereum Improvement Proposals (EIPs
 | **GitHub Citations** | Automatic links to source files in responses |
 | **Interaction Logging** | JSON logs for debugging and analysis |
 | **Configurable** | Works with any GitHub repository |
+
+---
+
+## Demo
+
+### Video Demo
+
+<!-- Add your demo video here -->
+<!-- [![Demo Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID) -->
+
+*Coming soon: Demo video showing the agent in action*
+
+### Screenshots
+
+<!-- Add screenshots of the Streamlit UI here -->
+
+| Chat Interface | Search Results |
+|----------------|----------------|
+| *Screenshot of chat UI* | *Screenshot showing citations* |
+
+### Sample Interaction
+
+```
+User: What is ERC-20?
+
+Agent: ERC-20 is the technical standard for fungible tokens on Ethereum.
+It defines a common interface including:
+
+- transfer(to, value) - Transfer tokens
+- balanceOf(account) - Check balance
+- approve(spender, value) - Approve spending
+
+Reference: [EIPS/eip-20.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+```
 
 ---
 
@@ -310,9 +346,10 @@ print(result.output)
 ## Project Structure
 
 ```
-ai_hero_course/
+eip-specs-agent/
 ├── pyproject.toml              # Root project configuration
 ├── README.md                   # This file
+├── LICENSE                     # MIT License
 ├── main.py                     # Root entry point (minimal)
 ├── uv.lock                     # Dependency lock file
 │
@@ -330,6 +367,12 @@ ai_hero_course/
 │   │
 │   └── logs/                   # Interaction logs (JSON)
 │       └── *.json
+│
+├── eval/                       # Evaluation system
+│   ├── data_gen.py             # Generate evaluation questions
+│   ├── evaluate.py             # LLM-as-judge evaluator
+│   ├── questions.json          # Generated Q&A dataset
+│   └── results.json            # Evaluation results
 │
 ├── artifacts/                  # Pre-computed data (optional)
 │   ├── eip_chunks.json         # Pre-chunked documents
@@ -516,6 +559,68 @@ Each indexed document contains:
     "created": "2015-11-19"
 }
 ```
+
+---
+
+## Evaluation
+
+The project includes an LLM-as-judge evaluation system to assess agent performance.
+
+### Evaluation Criteria
+
+| Criterion | Description |
+|-----------|-------------|
+| **Relevance** | Does the answer address the user's question? |
+| **Accuracy** | Is the information factually correct? |
+| **Completeness** | Does it cover all important aspects? |
+| **Citations** | Are sources properly referenced? |
+| **Clarity** | Is the answer well-structured and clear? |
+
+### Running Evaluations
+
+```bash
+# Generate evaluation questions from EIP documents
+python eval/data_gen.py --num-questions 50 --output eval/questions.json
+
+# Run evaluation on logged interactions
+python eval/evaluate.py --logs-dir app/logs --max-evals 10
+
+# View results
+cat eval/results.json | python -m json.tool
+```
+
+### Sample Results
+
+```
+============================================================
+EVALUATION SUMMARY
+============================================================
+
+Agent: eip_agent_v1
+Interactions Evaluated: 10
+Timestamp: 2025-01-16T12:00:00
+
+Pass Rates by Criterion:
+----------------------------------------
+  Relevance        95.0%
+  Accuracy         90.0%
+  Completeness     85.0%
+  Citations        80.0%
+  Clarity          90.0%
+----------------------------------------
+  Overall          88.0%
+
+============================================================
+```
+
+### Evaluation Files
+
+| File | Purpose |
+|------|---------|
+| `eval/data_gen.py` | Generate Q&A pairs from EIP documents |
+| `eval/evaluate.py` | LLM-as-judge evaluation runner |
+| `eval/questions.json` | Generated evaluation dataset |
+| `eval/results.json` | Evaluation results and metrics |
 
 ---
 

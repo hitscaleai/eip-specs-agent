@@ -1,14 +1,14 @@
-# EIP Docs Agent
+# EIP Specs Agent
 
 An AI-powered question-answering system for Ethereum Improvement Proposals (EIPs). Creates a searchable knowledge base from the EIPs repository and answers questions using RAG (Retrieval-Augmented Generation). Built with **PydanticAI**, **Streamlit**, and **minsearch**.
 
 ```
-    _____ ___ ____    ____                      _                    _
-   | ____|_ _|  _ \  |  _ \  ___   ___ ___     / \   __ _  ___ _ __ | |_
-   |  _|  | || |_) | | | | |/ _ \ / __/ __|   / _ \ / _` |/ _ \ '_ \| __|
-   | |___ | ||  __/  | |_| | (_) | (__\__ \  / ___ \ (_| |  __/ | | | |_
-   |_____|___|_|     |____/ \___/ \___|___/ /_/   \_\__, |\___|_| |_|\__|
-                                                    |___/
+    _____ ___ ____    ____                        _                    _
+   | ____|_ _|  _ \  / ___| _ __   ___  ___ ___  / \   __ _  ___ _ __ | |_
+   |  _|  | || |_) | \___ \| '_ \ / _ \/ __/ __| / _ \ / _` |/ _ \ '_ \| __|
+   | |___ | ||  __/   ___) | |_) |  __/ (__\__ \/ ___ \ (_| |  __/ | | | |_
+   |_____|___|_|     |____/| .__/ \___|\___|___/_/   \_\__, |\___|_| |_|\__|
+                           |_|                         |___/
 ```
 
 ## Table of Contents
@@ -45,7 +45,7 @@ An AI-powered question-answering system for Ethereum Improvement Proposals (EIPs
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           EIP DOCS AGENT SYSTEM                              │
+│                           EIP SPECS AGENT SYSTEM                              │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │   ┌──────────────┐                                                          │

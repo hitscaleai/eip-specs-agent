@@ -151,8 +151,8 @@ agent, branch = init_agent_cached()
 # STREAMLIT UI SETUP
 # ============================================================================
 
-st.set_page_config(page_title="EIP Docs Agent", layout="centered")
-st.title("EIP Docs Agent")
+st.set_page_config(page_title="EIP Specs Agent", layout="centered")
+st.title("EIP Specs Agent")
 st.caption(f"Ask questions about {REPO_OWNER}/{REPO_NAME} (branch: {branch})")
 
 # Initialize chat history in session state
